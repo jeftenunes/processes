@@ -4,7 +4,7 @@ defmodule Processes do
   """
 
   @doc """
-  Simulation of a long=running query execution.
+  Simulation of a long-running query execution.
 
   ## Examples
 
