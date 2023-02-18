@@ -19,4 +19,20 @@ defmodule Demo do
   def run_with_params do
     spawn(Demo, :work_with_parenthesis, ["param1", "param2", "param3"])
   end
+
+  def closure(arg) do
+    IO.puts("Arg received by the closure: #{arg}")
+  end
+
+  @doc """
+      As spawn triggers a new, separate and isolated process and processes are actors, so this process don't share any memory (and anything) among themselves, the var
+      param will be deeply copied and passed to the closure
+  """
+  def run_closure() do
+    param = "ababublebublebuble"
+
+    spawn(fn ->
+      closure(param)
+    end)
+  end
 end
