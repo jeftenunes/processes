@@ -1,7 +1,6 @@
 defmodule CrudServer do
-  def start(%{} = state) do
+  def start(%{} = initial_state) do
     spawn(fn ->
-      initial_state = %{}
       loop(initial_state)
     end)
   end
