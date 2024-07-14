@@ -1,4 +1,4 @@
-defmodule Server do
+defmodule CrudServer do
   def start(%{} = state) do
     spawn(fn ->
       initial_state = %{}
